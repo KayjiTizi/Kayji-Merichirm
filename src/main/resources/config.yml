@@ -1,0 +1,46 @@
+# Gia tri mac dinh cho cuong do khi plugin khoi dong: off, nhe, vua
+default-intensity: off
+
+# Ban kinh sinh tong hop hat tuyet quanh nguoi choi (block). Tang len de thay tuyet o xa hon (vd. 24-32 cho 1-2 chunk quanh nguoi choi)
+spawn-radius: 24.0
+# Do cao sinh hat tuyet so voi dau nguoi choi (block)
+spawn-height:
+  min: 3.0
+  max: 5.0
+
+# Lam troi am u khi bat che do tuyet (dat thoi gian ve luc chieu toi va dong dong ho neu muon)
+dim-world:
+  enabled: true
+  time: 12000   # 12000 = hoang hon
+  freeze-time: false  # Dat false de troi am u nhung van giu vong ngay dem tu nhien
+
+# Moi bao nhieu tick se sinh tiep tuyet (20 tick = 1 giay)
+tick-period: 10
+
+light:
+  particles-per-player: 12
+
+medium:
+  particles-per-player: 28
+
+heavy:
+  particles-per-player: 48
+
+# Phu tuyet len cac chunk dang tai de ca map co tuyet
+cover-world-with-snow: true
+cover:
+  tick-period: 40
+  chunks-per-world: 3
+  placements-per-chunk: 24
+  freeze-water: false
+
+# Co the ep thoi tiet khi bat che do Giang Sinh. Dat false neu chi muon hat tuyet/ phu tuyet ma khong muon troi mua/tuyet.
+force-snowy-weather: false
+# Che do thoi tiet khi bat che do: snow (= troi mua/tuyet), clear (= troi trong). Chi dung khi force-snowy-weather = true.
+weather-mode: clear
+
+# Thoi luong troi muon khi bat che do Giang Sinh (tinh bang tick)
+weather-duration-ticks: 6000
+
+# Thoi luong troi trong khi tat che do Giang Sinh (tinh bang tick)
+clear-weather-ticks: 6000

@@ -1,0 +1,17 @@
+name: Kayji-GiangSinhSnow
+version: 1.0.0
+main: com.kayji.giangsinh.GiangSinhPlugin
+api-version: 1.20
+description: Toggleable Christmas snow mode with light and medium intensities
+commands:
+  giangsinh:
+    description: Bat/tat che do Giang Sinh (tuyet roi)
+    usage: /<command> <nhe|vua|day|off|reload>
+    permission: giangsinh.toggle
+permissions:
+  giangsinh.toggle:
+    description: Cho phep bat/tat che do Giang Sinh
+    default: op
+  giangsinh.reload:
+    description: Cho phep reload cau hinh plugin
+    default: op

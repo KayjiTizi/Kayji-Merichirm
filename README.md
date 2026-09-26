@@ -9,6 +9,21 @@ Plugin Spigot/Bukkit thêm chế độ Giáng Sinh có tuyết rơi nhẹ và v�
 - Tùy chọn ép trời mưa/tuyết khi bật chế độ, và xóa mưa khi tắt (cấu hình bên dưới).
 - Tự động lưu cường độ đã chọn vào `config.yml`.
 
+## Bảng lệnh
+
+Gõ trong game với dấu `/`, có tab-complete:
+
+| Lệnh | Quyền | Mô tả |
+| --- | --- | --- |
+| `/giangsinh nhe` | `giangsinh.toggle` | Bật tuyết rơi nhẹ |
+| `/giangsinh vua` | `giangsinh.toggle` | Bật tuyết rơi vừa |
+| `/giangsinh day` | `giangsinh.toggle` | Bật tuyết rơi dày (cường độ cao) |
+| `/giangsinh off` | `giangsinh.toggle` | Tắt chế độ Giáng Sinh, trả thời tiết về bình thường |
+| `/giangsinh reload` | `giangsinh.reload` | Nạp lại `config.yml` |
+
+> Quyền mặc định: `op`.
+> Alias cũng hoạt động: `light`/`low` ≡ `nhe`, `medium`/`vua-vua` ≡ `vua`, `heavy`/`cao`/`thick` ≡ `day`, `tat`/`none` ≡ `off`.
+
 ## Cấu hình (config.yml)
 - `default-intensity`: `off` | `nhe` | `vua` | `day`.
 - `spawn-radius`: bán kính sinh hạt tuyết quanh người chơi (block). Tăng lên (vd. 24-32) nếu muốn thấy tuyết ở 1-2 chunk xung quanh.

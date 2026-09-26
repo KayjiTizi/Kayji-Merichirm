@@ -1,40 +1,43 @@
 # GiangSinhSnow
 
-Plugin Spigot/Bukkit them che do Giang Sinh co tuyet roi nhe va vua vua. Co the tat de tra ve thoi tiet binh thuong.
+Plugin Spigot/Bukkit thêm chế độ Giáng Sinh có tuyết rơi nhẹ và vừa vừa. Có thể tắt để trở về thời tiết bình thường.
 
-## Chuc nang
-- Lenh `/giangsinh <nhe|vua|off>` de chon cuong do tuyet hoac tat.
-- Hat tuyet tuy bien sinh quanh nguoi choi, khong phai block vat ly nen khong gay kho cho gameplay.
-- Tuy chon phu tuyet len cac chunk dang tai de ca map co tuyet (pham vi van phu thuoc chunk da tai).
-- Tuy chon ep troi mua/tuyet khi bat che do, va xoa mua khi tat (cau hinh duoc ben duoi).
-- Tu dong luu cuong do da chon vao `config.yml`.
+## Chức năng
+- Lệnh `/giangsinh <nhe|vua|day|off>` để chọn cường độ tuyết hoặc tắt.
+- Hạt tuyết tùy biến sinh quanh người chơi, không phải block vật lý nên không gây khó cho gameplay.
+- Tùy chọn phủ tuyết lên các chunk đang tải để cả map có tuyết (phạm vi vẫn phụ thuộc chunk đã tải).
+- Tùy chọn ép trời mưa/tuyết khi bật chế độ, và xóa mưa khi tắt (cấu hình bên dưới).
+- Tự động lưu cường độ đã chọn vào `config.yml`.
 
-## Cau hinh (config.yml)
+## Cấu hình (config.yml)
 - `default-intensity`: `off` | `nhe` | `vua` | `day`.
-- `spawn-radius`: ban kinh sinh hat tuyet quanh nguoi choi (block). Tang len (vd. 24-32) neu muon thay tuyet trong 1-2 chunk xung quanh.
-- `spawn-height.min`/`max`: do cao sinh hat tuyet tren dau nguoi choi, giam xuong se giup hat tuyet cham dat hon.
-- `dim-world.enabled`: true/false, neu true se dat thoi gian ve chieu toi khi bat tuyet de troi am u.
-- `dim-world.time`: thoi gian world (0-24000), 12000 la luc hoang hon.
-- `dim-world.freeze-time`: true/false, dong dong ho luc lam troi am u. De false neu muon van co vong ngay dem tu nhien.
-- `tick-period`: so tick giua cac luot sinh tuyet (20 tick = 1 giay).
-- `light.particles-per-player`, `medium.particles-per-player`, `heavy.particles-per-player`: so hat moi vong cho moi nguoi choi.
-- `cover-world-with-snow`: true/false, phu tuyet len cac chunk dang tai.
-- `cover.tick-period`: so tick giua cac dot phu tuyet.
-- `cover.chunks-per-world`: so chunk random moi the gioi moi dot phu.
-- `cover.placements-per-chunk`: so vi tri tuyet dat tren moi chunk moi dot phu.
-- `cover.freeze-water`: true/false, neu true se dong bang nuoc tren mat nuoc khi phu.
-- `force-snowy-weather`: true/false, ep thoi tiet khi bat che do. Dat false neu chi muon tuyet ma khong muon mua.
-- `weather-mode`: `snow` (troi mua/tuyet) hoac `clear` (troi trong, khong mua) khi `force-snowy-weather` bat.
-- `weather-duration-ticks` va `clear-weather-ticks`: thoi luong thoi tiet khi bat/tat che do.
+- `spawn-radius`: bán kính sinh hạt tuyết quanh người chơi (block). Tăng lên (vd. 24-32) nếu muốn thấy tuyết ở 1-2 chunk xung quanh.
+- `spawn-height.min`/`max`: độ cao sinh hạt tuyết trên đầu người chơi, giảm xuống sẽ giúp hạt tuyết chạm đất hơn.
+- `dim-world.enabled`: true/false, nếu true sẽ đặt thời gian về chiều tối khi bật tuyết để trời âm u.
+- `dim-world.time`: thời gian world (0-24000), 12000 là lúc hoàng hôn.
+- `dim-world.freeze-time`: true/false, đóng đồng hồ khi làm trời âm u. Để false nếu muốn vẫn có vòng ngày đêm tự nhiên.
+- `tick-period`: số tick giữa các lượt sinh tuyết (20 tick = 1 giây).
+- `light.particles-per-player`, `medium.particles-per-player`, `heavy.particles-per-player`: số hạt mỗi vòng cho mỗi người chơi.
+- `cover-world-with-snow`: true/false, phủ tuyết lên các chunk đang tải.
+- `cover.tick-period`: số tick giữa các đợt phủ tuyết.
+- `cover.chunks-per-world`: số chunk ngẫu nhiên mỗi thế giới mỗi đợt phủ.
+- `cover.placements-per-chunk`: số vị trí tuyết đặt trên mỗi chunk mỗi đợt phủ.
+- `cover.freeze-water`: true/false, nếu true sẽ đóng băng nước trên mặt nước khi phủ.
+- `force-snowy-weather`: true/false, ép thời tiết khi bật chế độ. Đặt false nếu chỉ muốn tuyết mà không muốn mưa.
+- `weather-mode`: `snow` (trời mưa/tuyết) hoặc `clear` (trời trong, không mưa) khi `force-snowy-weather` bật.
+- `weather-duration-ticks` và `clear-weather-ticks`: thời lượng thời tiết khi bật/tắt chế độ.
 
 ## Build
-Can Java 17+ va Maven:
+Cần Java 17+ và Maven:
 ```bash
 mvn package
 ```
-File phat hanh nam tai `target/GiangSinhSnow-1.0.0-SNAPSHOT.jar`.
+File phát hành nằm tại `target/GiangSinhSnow-1.0.0-SNAPSHOT.jar`.
 
-## Su dung
-1) Dat file jar vao thu muc `plugins` cua may chu.
-2) Khoi dong may chu de tao file cau hinh.
-3) Dung lenh `/giangsinh nhe`, `/giangsinh vua`, `/giangsinh day` de bat tuyet; `/giangsinh off` de tat va tra thoi tiet ve binh thuong; `/giangsinh reload` de nap lai cau hinh.
+## Sử dụng
+1) Đặt file jar vào thư mục `plugins` của máy chủ.
+2) Khởi động máy chủ để tạo file cấu hình.
+3) Dùng lệnh `/giangsinh nhe`, `/giangsinh vua`, `/giangsinh day` để bật tuyết; `/giangsinh off` để tắt và trả thời tiết về bình thường; `/giangsinh reload` để nạp lại cấu hình.
+
+## Giấy phép
+[GNU General Public License v3.0](LICENSE)
